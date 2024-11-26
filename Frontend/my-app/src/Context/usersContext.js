@@ -11,7 +11,7 @@ export const UsersContextProvider = ({ children }) => {
   const [info, setInfo] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000")
+    fetch("https://nodedashtask-backend.onrender.com")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -36,7 +36,7 @@ export const UsersContextProvider = ({ children }) => {
   const addItems = (newItem) => {
     console.log(newItem);
 
-    fetch("http://localhost:5000/adduser", {
+    fetch("https://nodedashtask-backend.onrender.com/adduser", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -74,7 +74,7 @@ export const UsersContextProvider = ({ children }) => {
 
   // delete
   const deleteItem = (id) => {
-    fetch(`http://localhost:5000/deleteuser/${id}`, {
+    fetch(`https://nodedashtask-backend.onrender.com/deleteuser/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
